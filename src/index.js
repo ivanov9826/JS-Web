@@ -1,5 +1,6 @@
 const express = require('express');
 const hbs = require('express-handlebars');
+const routes = require('./routes')
 
 const app = express();
 
@@ -12,8 +13,7 @@ app.engine('hbs' , hbs.engine({
 app.set('view engine' , 'hbs');
 app.set('views' , './src/views');
 
-app.get('/' , (req , res) =>{
-    res.render('index')
-});
+app.use(routes)
+
 
 app.listen(3000 , () => console.log(`App is listening on port 3000`));
