@@ -1,31 +1,26 @@
 const router = require('express').Router();
 
-const fs = require('fs/promises');
+const cubeService = require('../services/cubeService')
 
-const path = require('path')
-
-const cubes = require('../db.json');
-
-router.get('/create' , (req , res) => {
+router.get('/create', (req, res) => {
     res.render('create')
 });
 
-router.post('/create' , (req , res) => {
+router.post('/create', async (req, res) => {
     const cube = req.body;
 
-    if(cube.name.length < 2){
+    if (cube.name.length < 2) {
         res.status(400).send('Invalid request');
         return;
     }
 
-    cubes.push(cube);
-    fs.writeFile(path.resolve('src' , 'db.json') , JSON.stringify(cubes , '' , 4))
-    .then(() =>{
+    try {
+        await cubeService.save(cube);
+
         res.redirect('/');
-    })
-    .catch(err => {
+    } catch (error) {
         res.status(400).send(err);
-    });
+    };
 
 });
 
