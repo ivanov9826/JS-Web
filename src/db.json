@@ -9,7 +9,7 @@
         "id": 1,
         "name": "Eco-Dark",
         "imageUrl": "https://thingsidesire.com/wp-content/uploads/2018/06/Eco-Dark-Rubik%E2%80%99s-Cube2.jpg",
-        "difficultyLevel": 420
+        "difficultyLevel": 2
     },
     {
         "id": 2,
@@ -21,7 +21,7 @@
         "id": 3,
         "name": "Megaminx",
         "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/61HpQqVQ37L._SY355_.jpg",
-        "difficultyLevel": 69
+        "difficultyLevel": 3
     },
     {
         "id": 4,
@@ -43,5 +43,12 @@
         "description": "zxczxc",
         "imageUrl": "https://media.wired.com/photos/5a7e7cb6a2d3835392e1b502/master/pass/new_rubiks_cube_5.jpg",
         "difficultyLevel": "4"
+    },
+    {
+        "id": 7,
+        "name": "Ivan Ivanov",
+        "description": "asasd",
+        "imageUrl": "",
+        "difficultyLevel": "3"
     }
 ]
