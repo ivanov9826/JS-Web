@@ -10,16 +10,18 @@ const accessorySchema = mongoose.Schema({
         required: true,
         validate: {
             validator: /^https?/g,
-            message: 'Image Url should be a linkn'
+            message: 'Image Url should be a link'
         },
-        description: {
+        message: 'Image Url should be a link'
+    },
+    description: {
             type: String,
             maxlength: 120,
             required: true
         }
     }
-});
+);
 
-const Accessory = mongoose.model(accessorySchema);
+const Accessory = mongoose.model('Accessory', accessorySchema);
 
 module.exports = Accessory;
