@@ -30,8 +30,11 @@ router.get('/details/:_id' ,async (req , res) =>{
     res.render('details' , { cube });
 });
 
-router.get('/:_id/attach-accessory' , (req, res) =>{
-    res.render('accessory/attach')
+router.get('/:cubeId/attach-accessory' , async (req, res) =>{
+    const cube = await cubeService.getOne(req.params.cubeId).lean();
+    
+    //cube.lean();
+    res.render('accessory/attach' , {cube})
 })
 
 module.exports = router;
